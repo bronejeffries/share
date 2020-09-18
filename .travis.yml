@@ -67,6 +67,7 @@ jobs:
       script: bash _ci/build.sh
 
     - &test-staging
+      name: "Authentication Tests"
       stage: tests
       jdk: openjdk11
       before_install: bash _ci/init.sh
@@ -80,15 +81,19 @@ jobs:
             target_paths: $TRAVIS_BUILD_NUMBER
 
     - <<: *test-staging
+      name: "Admin Tools Tests"
       script: bash _ci/execute_share_web.sh "admin-tools"
 
     - <<: *test-staging
+      name: "Alfresco Console Tests"
       script: bash _ci/execute_share_web.sh "AlfrescoConsoles"
       
     - <<: *test-staging
+      name: "User Tests"
       script: bash _ci/execute_share_web.sh "user"
       
     - <<: *test-staging
+      name: "User Dashboard Tests"
       script: bash _ci/execute_share_web.sh "user-dashboard"
 
     - name: "Release"
