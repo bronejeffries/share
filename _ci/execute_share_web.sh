@@ -21,7 +21,7 @@ mvn clean install \
                -Dalfresco.server=3.8.143.55 \
                -Dalfresco.port=8080 \
                -Dshare.host=3.8.143.55 \
-               -Dshare.port=8181 \
+               -Dshare.port=8080 \
                -Dalfresco.scheme=http \
                -Dadmin.user=admin \
                -Dadmin.password=admin \
